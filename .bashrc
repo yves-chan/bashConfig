@@ -82,13 +82,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-    alias gitadd='git add .'
-    alias gitcommit='git commit -m'
-    alias gityves='git branch yves && git checkout yves'
-    alias gitreset='git reset --hard master'
-    alias gitpush='git push origin yves'
-    alias gitmaster='git checkout master'
-    alias mdb='mongod --dbpath /var/lib/mongodb'
 fi
 
 # some more ls aliases
@@ -119,10 +112,20 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+# Go path for Golang
+export GOPATH="$HOME/go_workspace"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$HOME/.node/bin:$PATH
+
+export PATH="/usr/local/bin/jdk1.8.0_101/bin:$PATH"
+export PATH=$PATH:$GOPATH/bin:$HOME/matlab/bin
+
+export NVM_DIR="/home/yves-chan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
